@@ -1,20 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from 'react-tooltip';
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import { BiHome } from "react-icons/bi";
 
 const Navbar = () => {
 
     const avatarURL = "https://i.pinimg.com/236x/de/6f/ef/de6fef47290c1e0f620ab161c66d9abd.jpg";
     const displayname = "Oikawa";
     const email = 'oikawa@gmail.com'
-    const user = true;
+    const user = null;
 
     const navOptions = <>
         <li><NavLink to={"/"}>Home</NavLink></li>
-        <li><NavLink to={"/allItems"}>Community</NavLink></li>
+        <li><NavLink to={"/community"}>Community</NavLink></li>
         <li><NavLink to={"/blogs"}>Blogs</NavLink></li>
-        <li><NavLink to={"/aboutus"}>About Us</NavLink></li>
-        <li><NavLink to={"/ContactUs"}>Contact Us</NavLink></li>
+        <li><NavLink to={"/aboutUs"}>About Us</NavLink></li>
+        <li><NavLink to={"/contactUs"}>Contact Us</NavLink></li>
     </>
     
     
@@ -45,8 +45,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="flex justify-between items-center flex-row">
-                <FaMagnifyingGlass />
-                <Link to={"/"} className="btn btn-ghost text-2xl font-bold text-primary hover:bg-neutral">Recoverly</Link>
+                <BiHome className="h-6 w-6"/>
+                <Link to={"/"} className="btn btn-ghost text-2xl font-bold text-primary hover:bg-neutral">Bengaluxe</Link>
             </div>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -57,8 +57,8 @@ const Navbar = () => {
         <div className="navbar-end hidden md:flex space-x-4 items-center">
             {!user ? (
                 <>
-                    <li><NavLink to={"/login"}>Log in</NavLink></li>
-                    <li><NavLink to={"/register"}>Register</NavLink></li>
+                    <NavLink to={"/login"}>Log in</NavLink>
+                    <NavLink to={"/register"}>Register</NavLink>
                 </>
             ) : (
                 <>
